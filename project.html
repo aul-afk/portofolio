@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project | Aulia Luh Bilqis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<nav>
+  <a class="logo" href="index.html">Portofolio</a>
+  <a class="btn p" style="padding:8px 22px;box-shadow:0 4px 0 var(--ink)" href="index.html#project">Semua project</a>
+</nav>
+<main class="wrap" id="app"></main>
+<footer>© 2026 Aulia Luh Bilqis · Jombang, Jawa Timur</footer>
+
+<div class="lb" id="lb">
+  <button class="x" id="lx" aria-label="Tutup">✕</button>
+  <button class="pv" id="lp" aria-label="Sebelumnya">‹</button>
+  <button class="nx" id="ln" aria-label="Berikutnya">›</button>
+  <img id="li" alt=""><p id="lc"></p>
+</div>
+
+<script src="data.js"></script>
+<script>
+const $ = s => document.querySelector(s);
+const esc = t => String(t).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const norm = g => (typeof g === "string" ? {src: g, caption: ""} : g);
+const slug = new URLSearchParams(location.search).get("p");
+const i = PROJECTS.findIndex(p => p.slug === slug);
+const app = $("#app");
+
+if (i < 0) {
+  app.innerHTML = `<a class="back" href="index.html#project">← Kembali</a><div class="card empty">Project tidak ditemukan 😢</div>`;
+} else {
+  const p = PROJECTS[i], g = p.gallery.map(norm);
+  document.title = p.title + " | Aulia Luh Bilqis";
+  const prev = PROJECTS[(i + PROJECTS.length - 1) % PROJECTS.length], next = PROJECTS[(i + 1) % PROJECTS.length];
+  app.innerHTML = `
+  <a class="back" href="index.html#project">← Kembali</a>
+  <header class="card dh rv" style="--c:${p.color}">
+    <span class="badge">${p.type} · ${p.year}</span>
+    <h1>${p.title}</h1>
+    <div class="tags">${p.roles.map(r => `<span style="background:var(--yellow)">${r}</span>`).join("")}</div>
+    <p>${p.long || p.desc}</p>
+    <div class="acts">${p.demo ? `<a class="btn p" href="${p.demo}" target="_blank" rel="noopener">Buka Demo</a>` : ""}${p.repo ? `<a class="btn" href="${p.repo}" target="_blank" rel="noopener">GitHub</a>` : ""}</div>
+  </header>
+  <div class="det">
+    <div class="card rv"><h3>Yang aku kerjakan</h3><ul>${p.fitur.map(f => `<li>${f}</li>`).join("")}</ul></div>
+    <div class="card rv" style="--d:.12s"><h3>Teknologi &amp; Topik</h3><div class="tags">${p.tags.map(t => `<span>${t}</span>`).join("")}</div></div>
+  </div>
+  <section style="padding:50px 0 0">
+    <h2 class="title rv">Galeri</h2>
+    ${g.length ? `<div class="gg">${g.map((x, k) => `<button class="th rv" style="--d:${k%6*.08}s" data-k="${k}"><img src="${esc(x.src)}" alt="${esc(p.title)} screenshot ${k+1}" loading="lazy"></button>`).join("")}</div>`
+    : `<div class="card empty rv">🖼️ Belum ada screenshot.<br>Taruh gambar di folder <code>img/</code>, lalu isi <code>gallery</code> project ini di <code>data.js</code>.</div>`}
+  </section>
+  <div class="pn">
+    <a class="btn" href="project.html?p=${prev.slug}">← ${prev.title}</a>
+    <a class="btn p" href="project.html?p=${next.slug}">${next.title} →</a>
+  </div>`;
+
+  /* lightbox */
+  let idx = 0; const lb = $("#lb");
+  const show = () => { const x = g[idx]; $("#li").src = x.src; $("#lc").textContent = (x.caption ? x.caption + " · " : "") + (idx+1) + "/" + g.length; $("#lp").style.display = $("#ln").style.display = g.length > 1 ? "" : "none"; };
+  const step = d => { idx = (idx + d + g.length) % g.length; show(); };
+  document.querySelectorAll(".gg .th").forEach(b => b.onclick = () => { idx = +b.dataset.k; show(); lb.classList.add("on"); });
+  $("#lp").onclick = () => step(-1); $("#ln").onclick = () => step(1); $("#lx").onclick = () => lb.classList.remove("on");
+  lb.onclick = e => { if (e.target === lb) lb.classList.remove("on"); };
+  document.addEventListener("keydown", e => {
+    if (!lb.classList.contains("on")) return;
+    if (e.key === "Escape") lb.classList.remove("on");
+    if (e.key === "ArrowLeft") step(-1);
+    if (e.key === "ArrowRight") step(1);
+  });
+}
+
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold: .1});
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+addEventListener("scroll", () => { const h = document.documentElement; $("#bar").style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + "%"; }, {passive: true});
+</script>
+</body>
+</html>

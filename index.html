@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aulia Luh Bilqis | Portofolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<nav>
+  <a class="logo" href="#">Portofolio</a>
+  <button class="burger" id="bg" aria-label="Menu">☰</button>
+  <ul id="menu"></ul>
+</nav>
+
+<main class="wrap">
+<section id="tentang-saya">
+  <div class="hero">
+    <div>
+      <span class="hi">Hai, aku <span class="hand">👋</span></span>
+      <h1 id="name"></h1>
+      <div class="role"><i id="role"></i></div>
+      <p class="d">Mahasiswi semester 3 Program Studi D4 Teknik Informatika di Politeknik Negeri Jember yang memiliki ketertarikan pada bidang teknologi informasi dan pengembangan perangkat lunak. Saya memiliki pengetahuan dasar dalam pemrograman, pengembangan aplikasi berbasis web dan mobile, serta pengelolaan basis data.</p>
+      <div class="btns"><a class="btn p" href="#project">Lihat project</a></div>
+      <div class="stats rv">
+        <div class="stat"><b data-n="3">0</b>Project</div>
+        <div class="stat"><b data-n="7">0</b>Pengalaman</div>
+        <div class="stat"><b data-n="5">0</b>Sertifikat</div>
+      </div>
+    </div>
+    <div class="art">
+    <div class="pic"><img alt="Foto Aulia Luh Bilqis" src="img/foto imut lagi.jpeg"></div>
+      <span class="em" style="top:6%;left:0">✨</span>
+      <span class="em" style="top:52%;right:-2%;animation-delay:-1s">⭐</span>
+      <span class="em" style="bottom:8%;right:8%;animation-delay:-2s">💖</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="mq"><div id="mq"></div></div>
+
+<main class="wrap">
+<section id="pendidikan">
+  <h2 class="title rv">Pendidikan</h2>
+  <div class="edu">
+    <div class="card rv"><small>2025 – Sekarang</small><h3>Politeknik Negeri Jember</h3><p><b>D4 Teknik Informatika.</b> Mata kuliah relevan: Pemrograman Web, Konsep Basis Data, Struktur Data, Teknologi Basis Data, Rekayasa Perangkat Lunak, Interaksi Manusia dan Komputer, Pemrograman Berorientasi Objek, Pengembangan Aplikasi Mobile, Manajemen Proyek Perangkat Lunak, Pengujian Perangkat Lunak, Workshop Sistem Informasi Web Server, Literasi Digital, dan Jaringan Komputer.</p></div>
+    <div class="card rv" style="--d:.15s"><small>2022 – 2025</small><h3>MAN 1 Jombang</h3><p><b>Madrasah Aliyah – Keterampilan Multimedia.</b> Kompetensi keahlian: Desain Grafis, Editing Foto dan Video, Pengolahan Media Digital, dan Dasar-Dasar Multimedia.</p></div>
+  </div>
+</section>
+
+<section id="pengalaman">
+  <h2 class="title rv">Pengalaman</h2>
+  <div class="tl" id="tl"></div>
+</section>
+
+<section id="project">
+  <h2 class="title rv">Project</h2>
+  <p class="sub rv">Klik project untuk membuka halaman detail dan galeri screenshot-nya.</p>
+  <div class="pg" id="pg"></div>
+</section>
+
+<section id="sertifikat">
+  <h2 class="title rv">Sertifikat</h2>
+  <div class="cg" id="cg"></div>
+</section>
+
+<section id="keahlian">
+  <h2 class="title rv">Keahlian</h2>
+  <div class="sk" id="sk"></div>
+</section>
+
+<section id="kontak">
+  <div class="card ctk rv">
+    <h2>Yuk, ngobrol!</h2>
+    <p>Punya ide project atau peluang magang? Hubungi aku lewat:</p>
+    <div class="btns">
+      <a class="btn" href="https://wa.me/6285808453019" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn" href="mailto:aulialuhbilqis14@gmail.com">Email</a>
+      <a class="btn" href="https://www.linkedin.com/in/aulia-luh-bilqis-617a243a2" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer>© 2026 Aulia Luh Bilqis · Jombang, Jawa Timur </footer>
+
+<script src="data.js"></script>
+<script>
+/* ================= DATA (edit di sini) ================= */
+
+const EXP = [
+  ["Web Developer", "E-PKL (Project Based Learning)", "2026", "var(--pink)", ["Merancang dan mengembangkan website E-PKL sesuai kebutuhan dan spesifikasi sistem.", "Mengembangkan tampilan antarmuka website yang responsif dan mudah digunakan.", "Mengintegrasikan antarmuka dengan basis data untuk penyimpanan dan pengelolaan informasi."]],
+  ["UI/UX Designer", "K-Rent (Project Based Learning)", "2026", "var(--purple)", ["Merancang desain antarmuka (UI) dan pengalaman pengguna (UX) untuk aplikasi K-Rent, platform penyewaan pakaian.", "Menyusun tata letak dan alur navigasi aplikasi untuk pengalaman pengguna yang intuitif."]],
+  ["Front-End Developer", "K-Rent (Project Based Learning)", "2026", "var(--mint)", ["Mengembangkan tampilan sesuai rancangan desain.", "Memastikan elemen antarmuka tampil konsisten dan responsif.", "Mengimplementasikan desain UI/UX ke dalam aplikasi menggunakan teknologi Front-End."]],
+  ["Database Developer", "Kusuma Care (Project Based Learning)", "2025", "var(--yellow)", ["Merancang dan mengelola struktur basis data untuk kebutuhan sistem Kusuma Care.", "Membuat tabel, menentukan atribut, dan mengatur relasi antar tabel.", "Mengelola penyimpanan dan pengambilan data demi integritas dan konsistensi data."]],
+  ["Web Developer", "Kusuma Care (Project Based Learning)", "2025", "var(--pink)", ["Merancang dan mengembangkan website Kusuma Care berdasarkan kebutuhan dan fungsionalitas sistem.", "Mengimplementasikan fitur dan antarmuka website dengan bahasa pemrograman yang sesuai.", "Mengintegrasikan website dengan basis data untuk penyimpanan, pengambilan, dan pengelolaan data."]],
+  ["Desainer Grafis", "Java Digital Printing (Full-Time)", "2025", "var(--purple)", ["Membuat dan mengedit desain banner menggunakan CorelDRAW.", "Menyesuaikan ukuran, tata letak, dan elemen desain sesuai kebutuhan pelanggan.", "Membantu pengoperasian mesin cetak serta persiapan dan pencetakan banner.", "Memastikan hasil desain sesuai permintaan pelanggan sebelum dicetak."]],
+  ["Desainer Grafis", "Java Digital Printing (Magang)", "2024", "var(--mint)", ["Membuat dan mengedit desain banner menggunakan CorelDRAW.", "Membantu administrasi dan pelayanan pelanggan.", "Menyiapkan desain sesuai permintaan dan kebutuhan pelanggan."]]
+];
+
+const CERTS = [
+  ["💻", "Web Development Fundamentals", "IBM SkillsBuild · 2026", "https://drive.google.com/file/d/1o0Y3cHX4-lL13pGYZTWShIsqfnvC3NUM/view?usp=sharing"],
+  ["📊", "Data Analytics Essentials", "CISCO Networking Academy · 2026", "https://drive.google.com/file/d/1lEm3cFaUj7oJnUpjfu32frEoa9cWKj1-/view?usp=sharing"],
+  ["🤖", "Strategic Planning in the AI Age", "HP LIFE · 2026", "https://drive.google.com/file/d/1vb3qjaT39BzCoQrzouQvZgygrkUblGbS/view?usp=sharing"],
+  ["🏢", "Praktik Kerja Lapangan", "MAN 1 Jombang · Java Digital Printing · 2024", "https://drive.google.com/file/d/1cjVl42TBUxldb8cjU-efFcWBpHX3YURB/view?usp=sharing"],
+  ["🖨️", "Praktik Kerja Lapangan", "Java Digital Printing · 2024", "https://drive.google.com/file/d/1wPVNGUp11n04F72KZjDsitbdCry0RCP7/view?usp=sharing"]
+]; // isi link sertifikat yang masih kosong ("") dengan link Google Drive-mu
+
+const SKILLS = [
+  ["Technical", "var(--pink)", ["HTML","CSS","JavaScript","PHP (Laravel & MVC native)","React + Vite","Flutter (Dart)","SQL","MySQL","SQLite","Firebase","Git & GitHub","Trello","XAMPP","Laragon","VS Code"]],
+  ["Desain", "var(--purple)", ["CorelDRAW","Figma","Canva","Adobe Photoshop","Graphic Design","UI/UX Design","Wireframing & Prototyping","Banner Design","Layout Design","Visual Communication"]],
+  ["Bahasa", "var(--mint)", ["Bahasa Indonesia (utama)","Bahasa Inggris (dasar)"]],
+  ["Lainnya", "var(--yellow)", ["Kreativitas & Inovasi","Komunikasi","Kerja Sama Tim","Manajemen Waktu","Berpikir Kritis","Problem Solving","Adaptabilitas","Ketelitian"]]
+];
+
+const NAV = ["Tentang Saya","Pendidikan","Pengalaman","Project","Sertifikat","Keahlian","Kontak"];
+
+/* ================= RENDER ================= */
+const $ = s => document.querySelector(s), id = s => s.toLowerCase().replace(/\s+/g,"-");
+const esc = t => String(t).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+$("#menu").innerHTML = NAV.map(n => `<li><a class="l" href="#${id(n)}">${n}</a></li>`).join("");
+$("#bg").onclick = () => $("#menu").classList.toggle("open");
+$("#menu").onclick = () => $("#menu").classList.remove("open");
+
+$("#name").innerHTML = "Aulia Luh Bilqis".split(" ").map((w, i) =>
+  `<span class="c${i+1}">` + [...w].map((c, j) => `<span style="animation-delay:${(i*4+j)*60+300}ms">${c}</span>`).join("") + "</span> ").join("");
+
+$("#mq").innerHTML = [...Array(2)].map(() => ["HTML","CSS","JavaScript","Laravel","React","Flutter","MySQL","Firebase","Figma","CorelDRAW","UI/UX"].map(s => `<span>${s} ✦</span>`).join("")).join("");
+
+$("#tl").innerHTML = EXP.map((e, i) => `<div class="card rv" style="--c:${e[3]};--d:${i%2*.1}s"><span class="yr">${e[2]}</span><h3>${e[0]}</h3><div class="at">${e[1]}</div><ul>${e[4].map(b => `<li>${b}</li>`).join("")}</ul></div>`).join("");
+
+$("#cg").innerHTML = CERTS.map((c, i) => `<div class="card ct rv" style="--d:${i*.08}s"><span class="ic">${c[0]}</span><h3>${c[1]}</h3><p>${c[2]}</p><a class="btn ${c[3] ? "" : "off"}" href="${c[3] || "#"}" target="_blank" rel="noopener">Lihat Sertifikat</a></div>`).join("");
+
+$("#sk").innerHTML = SKILLS.map((s, i) => `<div class="card rv" style="--c:${s[1]};--d:${i*.1}s"><h3>${s[0]}</h3><div class="chips">${s[2].map((c, j) => `<span style="--i:${j}">${c}</span>`).join("")}</div></div>`).join("");
+
+/* Project: kartu -> klik buka halaman detail */
+const norm = g => (typeof g === "string" ? {src: g, caption: ""} : g);
+$("#pg").innerHTML = PROJECTS.map((p, pi) => {
+  const g = p.gallery.map(norm);
+  const thumbs = g.length
+    ? g.slice(0, 3).map((x, k) => `<div class="th static"><img src="${esc(x.src)}" alt="${esc(p.title)} ${k+1}" loading="lazy">${k === 2 && g.length > 3 ? `<span class="more">+${g.length-3}</span>` : ""}</div>`).join("")
+    : [0,1,2].map(() => `<div class="th ph">🖼️<br>screenshot<br>belum ada</div>`).join("");
+  return `<a class="card pj rv" href="project.html?p=${p.slug}" style="--c:${p.color};--d:${pi*.12}s">
+    <div class="top"><span>${p.type} · ${p.year}</span><h3>${p.title}</h3></div>
+    <div class="in"><div class="tags">${p.roles.map(r => `<span style="background:var(--yellow)">${r}</span>`).join("")}</div>
+    <p>${p.desc}</p><div class="gal">${thumbs}</div>
+    <div class="tags">${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
+    <span class="go">Lihat detail →</span></div></a>`;
+}).join("");
+
+/* Animasi: reveal saat scroll, counter, typewriter, progress bar, menu aktif */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add("in");
+  e.target.querySelectorAll("[data-n]").forEach(n => {
+    const t = +n.dataset.n; let v = 0;
+    const iv = setInterval(() => { n.textContent = ++v; if (v >= t) clearInterval(iv); }, 200);
+  });
+  io.unobserve(e.target);
+}), {threshold: .15});
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+
+const roles = ["Web Developer", "UI/UX Designer", "Front-End Developer", "Database Developer", "Graphic Designer"];
+let ri = 0, ci = 0, del = false;
+(function type() {
+  const w = roles[ri];
+  $("#role").textContent = w.slice(0, del ? --ci : ++ci);
+  let t = del ? 40 : 90;
+  if (!del && ci === w.length) { del = true; t = 1400; }
+  else if (del && ci === 0) { del = false; ri = (ri + 1) % roles.length; t = 300; }
+  setTimeout(type, t);
+})();
+
+const links = [...document.querySelectorAll("nav a.l")];
+const secs = links.map(a => document.querySelector(a.getAttribute("href")));
+addEventListener("scroll", () => {
+  const h = document.documentElement;
+  $("#bar").style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + "%";
+  let a = 0; secs.forEach((s, i) => { if (s.getBoundingClientRect().top < 200) a = i; });
+  links.forEach((l, i) => l.classList.toggle("on", i === a));
+}, {passive: true});
+dispatchEvent(new Event("scroll"));
+</script>
+</body>
+</html>
